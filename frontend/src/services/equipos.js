@@ -2,10 +2,12 @@
   import.meta.env.VITE_API_URL || "http://localhost:3000"
 ).replace(/\/$/, "");
 
+export const EQUIPOS_URL = `${API_URL}/equipos`;
+
 async function solicitar(ruta = "", opciones = {}) {
   let respuesta;
   try {
-    respuesta = await fetch(`${API_URL}/equipos${ruta}`, {
+    respuesta = await fetch(`${EQUIPOS_URL}${ruta}`, {
       ...opciones,
       headers: opciones.body
         ? { "Content-Type": "application/json" }

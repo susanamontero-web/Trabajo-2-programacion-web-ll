@@ -8,6 +8,18 @@
 * {
   box-sizing: border-box;
 }
+.enlace-api {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
+.enlace-api input {
+  flex: 1 1 240px;
+  min-width: 0;
+  margin-top: 0;
+}
 body {
   margin: 0;
 }

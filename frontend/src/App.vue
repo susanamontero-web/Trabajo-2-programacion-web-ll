@@ -1,6 +1,21 @@
 ﻿<script setup>
 import { computed, onMounted, reactive, ref } from "vue";
-import { equiposApi } from "./services/equipos.js";
+import { equiposApi, EQUIPOS_URL } from "./services/equipos.js";
+
+const enlaceApi = ref(null);
+const mensajeCopia = ref("");
+
+async function copiarEnlaceApi() {
+  try {
+    await navigator.clipboard.writeText(EQUIPOS_URL);
+    mensajeCopia.value = "Enlace copiado. Ya puedes pegarlo en Postman.";
+  } catch {
+    enlaceApi.value?.focus();
+    enlaceApi.value?.select();
+    mensajeCopia.value =
+      "No se pudo copiar automáticamente. El enlace está seleccionado: presiona Ctrl+C para copiarlo.";
+  }
+}
 
 const estados = ["Disponible", "En uso", "Mantención", "Baja"];
 const equipos = ref([]);
@@ -148,6 +163,26 @@ onMounted(cargarEquipos);
       <h1>Inventario tecnológico</h1>
       <p>Registro y administración de equipos.</p>
     </header>
+    <section aria-labelledby="titulo-postman">
+      <h2 id="titulo-postman">Probar la API en Postman</h2>
+      <p>
+        Copia el enlace, pégalo en Postman y envía una petición GET para ver los
+        equipos. El backend debe estar iniciado.
+      </p>
+      <label for="enlace-api">Enlace de equipos</label>
+      <div class="enlace-api">
+        <input
+          id="enlace-api"
+          ref="enlaceApi"
+          :value="EQUIPOS_URL"
+          type="text"
+          readonly
+          @click="$event.target.select()"
+        />
+        <button type="button" @click="copiarEnlaceApi">Copiar enlace</button>
+      </div>
+      <p v-if="mensajeCopia" role="status">{{ mensajeCopia }}</p>
+    </section>
     <p v-if="error" class="aviso error" role="alert">{{ error }}</p>
     <p v-if="mensaje" class="aviso exito" role="status">{{ mensaje }}</p>
     <section aria-labelledby="titulo-formulario">
