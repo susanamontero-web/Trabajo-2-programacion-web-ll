@@ -165,10 +165,7 @@ onMounted(cargarEquipos);
     </header>
     <section aria-labelledby="titulo-postman">
       <h2 id="titulo-postman">Probar la API en Postman</h2>
-      <p>
-        Copia el enlace, pégalo en Postman y envía una petición GET para ver los
-        equipos. El backend debe estar iniciado.
-      </p>
+      
       <label for="enlace-api">Enlace de equipos</label>
       <div class="enlace-api">
         <input
