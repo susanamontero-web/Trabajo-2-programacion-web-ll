@@ -1,7 +1,7 @@
-﻿:root {
+:root {
   font-family: Arial, sans-serif;
-  color: #243247;
-  background: #f3f5f7;
+  color: #51334f;
+  background: #fff5fa;
   line-height: 1.5;
   font-synthesis: none;
 }
@@ -44,7 +44,7 @@ header {
 }
 section {
   background: white;
-  border: 1px solid #d5dce3;
+  border: 1px solid #ead2e2;
   border-radius: 6px;
   padding: 20px;
   margin-bottom: 20px;
@@ -72,7 +72,7 @@ textarea {
   width: 100%;
   margin-top: 5px;
   padding: 9px 10px;
-  border: 1px solid #8c99a8;
+  border: 1px solid #b386aa;
   border-radius: 4px;
   font: inherit;
   color: inherit;
@@ -93,7 +93,7 @@ form .acciones {
   margin-top: 16px;
 }
 button {
-  background: #245b92;
+  background: #934878;
   color: white;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -107,11 +107,11 @@ button:hover {
 }
 button.secundario {
   background: white;
-  border-color: #8c99a8;
-  color: #243247;
+  border-color: #b386aa;
+  color: #51334f;
 }
 button.peligro {
-  background: #aa3030;
+  background: #a63159;
 }
 button:disabled {
   opacity: 0.55;
@@ -121,7 +121,7 @@ input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
 button:focus-visible {
-  outline: 3px solid #357ac3;
+  outline: 3px solid #9960b2;
   outline-offset: 2px;
 }
 .cabecera-seccion {
@@ -142,14 +142,14 @@ button:focus-visible {
   overflow-wrap: anywhere;
 }
 .error {
-  color: #842121;
-  background: #fff0f0;
-  border-color: #d99a9a;
+  color: #852443;
+  background: #fff0f5;
+  border-color: #dc9bb5;
 }
 .exito {
-  color: #215e35;
-  background: #edf8f0;
-  border-color: #91bba0;
+  color: #46613d;
+  background: #f2f7ed;
+  border-color: #a8bd95;
 }
 .tabla-contenedor {
   overflow-x: auto;
@@ -162,12 +162,12 @@ table {
 th,
 td {
   padding: 10px;
-  border-bottom: 1px solid #d5dce3;
+  border-bottom: 1px solid #ead2e2;
   text-align: left;
   overflow-wrap: anywhere;
 }
 th {
-  background: #edf1f5;
+  background: #f3e7f6;
 }
 td .acciones {
   min-width: 200px;
